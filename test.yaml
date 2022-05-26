@@ -1,7 +1,7 @@
 ---
 - name: install cockroachDB Red Hat 8.4
   hosts: all
-  remote_user: root
+  remote_user: corecard
   tasks:
     - name: install chrony NTP Server
       ansible.builtin.template:
