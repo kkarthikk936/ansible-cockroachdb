@@ -1,37 +1,37 @@
 ---
 
   - name: Generic host setup
-    hosts: "{{ hostgroup }}"
-    become: true
+    hosts: all
+    become: false
     roles:
       - host-setup
 
 
   - name: Install CockroachDB
-    hosts: "{{ hostgroup }}"
-    become: true
+    hosts: all
+    become: false
     roles:
       - cockroach-install
       - {role: cockroach-certs, when: cluster_mode|lower == 'secure'}
       - cockroach-cluster
 
   - name: Manage Cluster Settings
-    hosts: "{{ hostgroup }}"
-    become: true
+    hosts: all
+    become: false
     roles:
       - cockroach-cluster-settings
 
   - name: Create DB's and users
-    hosts: "{{ hostgroup }}"
-    become: true
+    hosts: all
+    become: false
     roles:
       - cockroach-db
       - cockroach-users
       - cockroach-grants
 
   - name: Handover to systemd
-    hosts: "{{ hostgroup }}"
-    become: true
+    hosts: all
+    become: false
     serial: 1
     roles:
       - { role: cockroach-systemd, when: use_systemd}
