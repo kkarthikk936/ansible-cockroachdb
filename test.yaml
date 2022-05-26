@@ -1,0 +1,9 @@
+---
+- name: install cockroachDB Red Hat 8.4
+ hosts: all
+ remote_user: root
+ tasks:
+   - name: install chrony NTP Server
+        ansible.builtin.template:
+          src: chrony.conf
+          dest: /etc/chrony.conf
