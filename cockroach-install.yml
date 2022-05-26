@@ -1,10 +1,5 @@
 ---
 
-  - name: Generic host setup
-    hosts: all
-    become: false
-    roles:
-      - host-setup
 
 
   - name: Install CockroachDB
