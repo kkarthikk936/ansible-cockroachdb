@@ -9,7 +9,7 @@
 
   - name: Install CockroachDB
     hosts: all
-    become: false
+    become: true
     roles:
       - cockroach-install
       - {role: cockroach-certs, when: cluster_mode|lower == 'secure'}
@@ -17,7 +17,7 @@
 
   - name: Manage Cluster Settings
     hosts: all
-    become: false
+    become: true
     roles:
       - cockroach-cluster-settings
 
