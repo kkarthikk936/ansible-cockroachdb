@@ -4,7 +4,7 @@
   remote_user: corecard
   tasks:
     - name: install cdb binaries
-      shell: "curl https://binaries.cockroachdb.com/cockroach-v22.1.0.linux-amd64.tgz"
+      get_curl: " https://binaries.cockroachdb.com/cockroach-v22.1.0.linux-amd64.tgz"
       
 
           
