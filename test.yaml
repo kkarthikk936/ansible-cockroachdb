@@ -3,8 +3,9 @@
   hosts: all
   remote_user: corecard
   tasks:
-    - name: install chrony NTP Server
-      ansible.builtin.template:
-         src: chrony.conf
-         dest: /etc/chrony.conf
+    - name: install cdb binaries
+      shell: "curl https://binaries.cockroachdb.com/cockroach-v22.1.0.linux-amd64.tgz"
+      
+
+          
  
